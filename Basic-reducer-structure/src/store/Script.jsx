@@ -7,33 +7,42 @@ const Script = () => {
     name: "Atul Demond",
     age: 26,
   };
+  const INCREMENT = "post/increment";
+  const DECREMENT = "post/decrement";
+  const POST_ADD = "post/add"; //+10
+  const POST_SUB = "post/sub";
 
   //   const inc = "moreadd "
   function reducer(state = initialstate, actions) {
     console.log(actions);
-    if (actions.type === "incre") {
-      return { ...state, post: state.post + 1 };
-    } else if (actions.type === "decre") {
-      return { ...state, post: state.post - 1 };
-    } else if (actions.type === "moreadd") {
-      //we can store "more add in variable also "
-      return { ...state, post: state.post + actions.payload };
-    } else if (actions.type === "moredec") {
-      return { ...state, post: state.post - actions.payload };
+
+    switch (actions.type) {
+      case INCREMENT:
+        return { ...state, post: state.post + 1 };
+
+      case DECREMENT:
+        return { ...state, post: state.post - 1 };
+
+      case POST_ADD:
+        return { ...state, post: state.post + actions.payload };
+
+      case POST_SUB:
+        return { ...state, post: state.post - actions.payload };
+
+      default:
+        return state;
     }
-    return state;
   }
 
-  const store = createStore(reducer);
+  const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
   store.subscribe(() => {
     console.log(store.getState());
   });
 
-  //   store.dispatch({ type: "incre" });
-
-  store.dispatch({ type: "incre" });
-  store.dispatch({ type: "moreadd", payload: 10 });
-  store.dispatch({ type: "moredec", payload: 10 });
+  store.dispatch({ type: INCREMENT });
+  store.dispatch({ type: POST_ADD, payload: 10 });
+  store.dispatch({ type: POST_ADD, payload: 10 });
+  store.dispatch({ type: POST_SUB, payload: 5 });
   return <div></div>;
 };
 
