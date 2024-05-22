@@ -1,12 +1,14 @@
 import React from "react";
 import { createStore } from "redux";
+import { productList } from "./File_Data";
 
 const Script = () => {
   let initialstate = {
-    post: 0,
-    name: "Atul Demond",
-    age: 26,
+    products: productList,
+    cartItem: [],
+    wishList: [],
   };
+  console.log(productList);
   const INCREMENT = "post/increment";
   const DECREMENT = "post/decrement";
   const POST_ADD = "post/add"; //+10
