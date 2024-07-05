@@ -20,7 +20,7 @@ const main_reducer = combineReducers({
   wish_list: whislist_reducer,
 });
 
-const store = createStore(
+export const store = createStore(
   main_reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__?.()
 );
@@ -30,15 +30,15 @@ store.subscribe(() => {
 });
 
 //-----------------------------ACTION CREATORS ----------------
-const a = store.dispatch(increase_cart_item_quantity(5));
-console.log(a);
-const b = store.dispatch(decrease_cart_item_quantity(5));
-console.log(b);
-const c = store.dispatch(add_to_cart(6, 1));
-console.log(c);
-const d = store.dispatch(remove_from_cart(6));
-console.log(d);
-const e = store.dispatch(add_to_wishlist(6, "Product 6"));
-console.log(e);
-const f = store.dispatch(remove_from_wishlist(6));
-console.log(f);
+// const a = store.dispatch(increase_cart_item_quantity(5));
+// console.log(a);
+// const b = store.dispatch(decrease_cart_item_quantity(5));
+// console.log(b);
+// const c = store.dispatch(add_to_cart(6, 1));
+// console.log(c);
+// const d = store.dispatch(remove_from_cart(6));
+// console.log(d);
+// const e = store.dispatch(add_to_wishlist(6, "Product 6"));
+// console.log(e);
+// const f = store.dispatch(remove_from_wishlist(6));
+// console.log(f);
