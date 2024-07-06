@@ -36,7 +36,7 @@ const Product = ({ product_id, title, rating, price, imageurl }) => {
             <button onClick={() => dispatch(add_to_cart(product_id))}>
               Add to Cart
             </button>
-            <button>Buy Now</button>
+            <button>Add to Wishlist</button>
           </div>
         </div>
       </div>

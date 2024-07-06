@@ -18,7 +18,7 @@ export function decrease_cart_item_quantity(payload) {
   return { type: CART_DECREASE_ITEM_QUANTITY, payload };
 }
 export function increase_cart_item_quantity(payload) {
-  return { type: CART_DECREASE_ITEM_QUANTITY, payload };
+  return { type: CART_INCREASE_ITEM_QUANTITY, payload };
 }
 
 //REDUCERS---------------------------->
@@ -47,7 +47,10 @@ export const cart_reducer = (state = [], action) => {
             ];
           }
         } catch (error) {
-          console.error("An error occurred while processing ADD_TO_CART:", error);
+          console.error(
+            "An error occurred while processing ADD_TO_CART:",
+            error
+          );
           return state;
         }
 
