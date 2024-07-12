@@ -5,7 +5,11 @@ const todoSlice = createSlice({
   initialState: [],
   reducers: {
     addTodo: (state, action) => {
-      state.push(action.payload);
+      const { title, description } = action.payload;
+      if (title && description) {
+        const newTodo = { ...action.payload, id: Date.now(), completed: false };
+        state.push(newTodo);
+      }
     },
     removeTodo: (state, action) => {
       return state.filter((todo) => todo.id !== action.payload);

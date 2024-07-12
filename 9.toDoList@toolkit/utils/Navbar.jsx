@@ -3,13 +3,20 @@ import { Link, Route, Routes } from "react-router-dom";
 import Home from "../components/Home";
 import About from "../components/About";
 import Contact from "../components/Contact";
+import "../Style/navbar.css";
 const Navbar = () => {
   return (
     <>
       <div className="navbar">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
+        <Link className="link" to="/">
+          Home
+        </Link>
+        <Link className="link" to="/about">
+          About
+        </Link>
+        <Link className="link" to="/contact">
+          Contact
+        </Link>
       </div>
       <Routes>
         <Route path="/" element={<Home />} />

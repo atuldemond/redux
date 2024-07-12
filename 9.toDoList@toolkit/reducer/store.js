@@ -12,23 +12,23 @@ export const store = configureStore({
   },
 });
 
-store.dispatch(
-  addTodo({
-    id: 1,
-    title: "React Redux and Toolkit",
-    description: "complete Todo funanalities with redux toolkit",
-    completed: false,
-  })
-);
-store.dispatch(
-  updateTodo({
-    id: 1,
-    title: "React Redux and Toolkit",
-    description:
-      "complete Todo funanalities with redux toolkit and i am updating my values",
-    completed: false,
-  })
-);
-store.dispatch(completeTodo({ id: 1, completed: true }));
+// store.dispatch(
+//   addTodo({
+//     id: 1,
+//     title: "React Redux and Toolkit",
+//     description: "complete Todo funanalities with redux toolkit",
+//     completed: false,
+//   })
+// );
+// store.dispatch(
+//   updateTodo({
+//     id: 1,
+//     title: "React Redux and Toolkit",
+//     description:
+//       "complete Todo funanalities with redux toolkit and i am updating my values",
+//     completed: false,
+//   })
+// );
+// store.dispatch(completeTodo({ id: 1, completed: true }));
 
-store.dispatch(removeTodo(1));
+// store.dispatch(removeTodo(1));
