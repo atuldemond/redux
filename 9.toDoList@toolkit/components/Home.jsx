@@ -2,7 +2,12 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { store } from "../reducer/store";
-import { addTodo, completeTodo, removeTodo } from "../reducer/slices/todoSlice";
+import {
+  addTodo,
+  completeTodo,
+  removeTodo,
+  updateTodo,
+} from "../reducer/slices/todoSlice";
 import "../Style/home.css";
 const Home = () => {
   const todo = useSelector((state) => state.todo);
@@ -39,11 +44,12 @@ const Home = () => {
             <p>{todo.description}</p>
             <div className="btn">
               <button
-                onClick={() => {
-                  dispatch(completeTodo(todo.id));
+                onClick={(e) => {
+                  dispatch(completeTodo({ id: todo.id, completed: true }));
                 }}
+                style={{ backgroundColor: todo.completed ? "green" : "" }}
               >
-                Complete
+                {todo.completed ? "Completed" : "Complete"}
               </button>
               <button onClick={() => dispatch(removeTodo(todo.id))}>
                 Delete
